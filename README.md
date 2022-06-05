@@ -1,7 +1,22 @@
 
 # Bazel build template for cpp
 
-This project contains a base template to start a cpp project with bazel.
+
+<!-- PROJECT LOGO -->
+<br />
+<div align="center">
+    <img src="https://cdn-icons.flaticon.com/png/512/2353/premium/2353459.png?token=exp=1654456384~hmac=f493b42a8fb1c9e3ee7a680d71abbc5c"
+      alt="Project Logo"
+      width="100"
+      height="100"
+    />
+  <h3 align="center">Bazel CPP project template</h3>
+  <p align="center">
+    An awesome cpp project template with bazel build system to jumpstart your projects!
+  </p>
+</div>
+
+---
 
 ![](https://img.shields.io/github/license/IvoBrandao/cpp_bazel_project)
 
