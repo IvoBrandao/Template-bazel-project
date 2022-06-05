@@ -20,8 +20,8 @@
 
 ![](https://img.shields.io/github/license/IvoBrandao/cpp_bazel_project)
 
-
 ## features
+---
 
 Frameworks:
 
@@ -36,11 +36,12 @@ Libraries:
 * [x]: Support [Google Protobuf](https://github.com/protocolbuffers/protobuf) library
 
 ## bazel Installation 
-
+---
 The instalation guide can be found int the following link: 
-    * Ubuntu - [bazel](https://docs.bazel.build/versions/master/install-ubuntu.html)
-    * MacOS - [bazel](https://docs.bazel.build/versions/master/install-macos.html)
-    * Windows - [bazel](https://docs.bazel.build/versions/master/install-windows.html)
+
+* Ubuntu - [bazel](https://docs.bazel.build/versions/master/install-ubuntu.html)
+* MacOS - [bazel](https://docs.bazel.build/versions/master/install-macos.html)
+* Windows - [bazel](https://docs.bazel.build/versions/master/install-windows.html)
 
 ## How to use this repository
 
