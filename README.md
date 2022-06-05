@@ -1,14 +1,33 @@
+
 # Bazel build template for cpp
 
 This project contains a base template to start a cpp project with bazel.
 
+![](https://img.shields.io/github/license/IvoBrandao/cpp_bazel_project)
+
+
 ## features
 
-* [x]: Test: Support Google test framework
-* [x]: mock: Support Google mock framework
-* [x]: log: Support Google glog framework
+Frameworks:
 
-## How to use
+* [x]: Test Support : [Google test](https://github.com/google/googletest) framework
+* [x]: Mock Support : [Google mock](https://google.github.io/googletest) framework
+* [x]: Logging Support : [Google glog](https://github.com/google/glog) framework
+* [x]: Benchmarking Support : [Google benchmark](https://github.com/google/benchmark) framework 
+* [x]: Reponse Procedure Call Support : [Google Grpc](https://grpc.io/) framework
+
+Libraries:
+* [x]: Support [Google Abseil](https://github.com/abseil/abseil-cpp) library
+* [x]: Support [Google Protobuf](https://github.com/protocolbuffers/protobuf) library
+
+## bazel Installation 
+
+The instalation guide can be found int the following link: 
+    * Ubuntu - [bazel](https://docs.bazel.build/versions/master/install-ubuntu.html)
+    * MacOS - [bazel](https://docs.bazel.build/versions/master/install-macos.html)
+    * Windows - [bazel](https://docs.bazel.build/versions/master/install-windows.html)
+
+## How to use this repository
 
 **Step 1:** Clone the project
 
