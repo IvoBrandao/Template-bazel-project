@@ -3,7 +3,8 @@
 
 #include "pkg.hpp"
 
-static void Error_Handler()
+// Define the function as [[noreturn]]
+[[noreturn]] static void Error_Handler()
 {
     // Reports something...
     LOG(ERROR) << "Something went wrong...";
@@ -16,7 +17,9 @@ int main(int argc, char *argv[])
     // Initialize Google’s logging library.
     google::InitGoogleLogging(argv[0]);
     google::SetStderrLogging(google::INFO);
-    google::InstallFailureFunction(&Error_Handler);
+
+    // Cast Error_Handler to logging_fail_func_t to match the function signature
+    google::InstallFailureFunction(reinterpret_cast<google::logging_fail_func_t>(Error_Handler));
 
     LOG(INFO) << "Entry main()";
     LOG(INFO) << "StartUp Application";

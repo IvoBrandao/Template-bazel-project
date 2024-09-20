@@ -5,7 +5,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-    <img src="https://cdn-icons.flaticon.com/png/512/2353/premium/2353459.png?token=exp=1654456384~hmac=f493b42a8fb1c9e3ee7a680d71abbc5c"
+    <img src="https://www.gstatic.com/devrel-devsite/prod/v8330b7bdce12528ca95041e234ad065d24b70aaf6096876dac7cb56d8918f144/bazel/images/lockup.svg"
       alt="Project Logo"
       width="100"
       height="100"
@@ -18,59 +18,86 @@
 
 ---
 
-![](https://img.shields.io/github/license/IvoBrandao/cpp_bazel_project)
+![](https://img.shields.io/github/license/IvoBrandao/cpp_bazel_project) [![Build Bazel Project](https://github.com/IvoBrandao/Template-bazel-project/actions/workflows/main.yml/badge.svg)](https://github.com/IvoBrandao/Template-bazel-project/actions/workflows/main.yml)
 
 ## features
 ---
 
-Frameworks:
+## Features
 
-* [x]: Test Support : [Google test](https://github.com/google/googletest) framework
-* [x]: Mock Support : [Google mock](https://google.github.io/googletest) framework
-* [x]: Logging Support : [Google glog](https://github.com/google/glog) framework
-* [x]: Benchmarking Support : [Google benchmark](https://github.com/google/benchmark) framework 
-* [x]: Reponse Procedure Call Support : [Google Grpc](https://grpc.io/) framework
+This project includes support for:
+
+Frameworks:
+* [x] Testing with [Google Test](https://github.com/google/googletest)
+* [x] Mocking with [Google Mock](https://github.com/google/googletest)
+* [x] Logging with [Google glog](https://github.com/google/glog)
+* [x] Benchmarking with [Google Benchmark](https://github.com/google/benchmark)
+* [x] Remote Procedure Call (RPC) with [gRPC](https://grpc.io/)
 
 Libraries:
-* [x]: Support [Google Abseil](https://github.com/abseil/abseil-cpp) library
-* [x]: Support [Google Protobuf](https://github.com/protocolbuffers/protobuf) library
+* [x] [Abseil C++](https://github.com/abseil/abseil-cpp)
+* [x] [Protocol Buffers](https://github.com/protocolbuffers/protobuf)
 
-## bazel Installation 
----
-The instalation guide can be found int the following link: 
+## Bazel Installation
 
-* Ubuntu - [bazel](https://docs.bazel.build/versions/master/install-ubuntu.html)
-* MacOS - [bazel](https://docs.bazel.build/versions/master/install-macos.html)
-* Windows - [bazel](https://docs.bazel.build/versions/master/install-windows.html)
+Please refer to the official Bazel installation guide for your platform:
 
-## How to use this repository
+* [Ubuntu Installation Guide](https://docs.bazel.build/versions/master/install-ubuntu.html)
+* [macOS Installation Guide](https://docs.bazel.build/versions/master/install-macos.html)
+* [Windows Installation Guide](https://docs.bazel.build/versions/master/install-windows.html)
 
-**Step 1:** Clone the project
+## Project Setup
+
+### Step 1: Clone the repository
 
 ``` bash
-git clone git@github.com:IvoBrandao/cpp_bazel_project.git
+git clone git@github.com:IvoBrandao/template-bazel-project.git
 ```
 
-**Step 2:** Build the project
+### Step 2: Build the project
 
-``` bash
-cd cpp_bazel_project
+```bash
 bazel build //app:main
 ```
-**Step 3:** Run the project
 
-``` bash
+### Step 3: Run the project
+
+```bash
 bazel run //app:main
 ```
-**Step 4:** Test the project
 
-``` bash
+### Step 4: Test the project
+
+```bash
 bazel test //app:main
-``` 
-**Step 5:** Test each library individually
-
-``` bash
-bazel test //lib/pkg:pkg --test_output=all
 ```
+
+### Step 5: Test individual libraries
+
+To run tests for specific libraries (e.g., pkg library), use:
+
+```bash
+bazel test //lib/pkg:pkg_test --test_output=all
+```
+
+## Dependencies
+
+The project uses Bazel’s module system (MODULE.bazel) to manage dependencies. The following libraries are included:
+
+* [bazel_skylib](https://github.com/bazelbuild/bazel-skylib) for Bazel utility functions.
+* [rules_platform](https://github.com/bazelbuild/platforms) for platform configurations.
+* [rules_cc](https://github.com/bazelbuild/rules_cc) for C++ build rules.
+* [rules_testing](https://github.com/bazelbuild/rules_testing) for testing utilities.
+* [Google Test](https://github.com/google/googletest) for unit testing.
+* [gRPC](https://grpc.io/) for RPC support.
+* [Protocol Buffers](https://github.com/protocolbuffers/protobuf) for message serialization.
+* [Abseil C++](https://github.com/abseil/abseil-cpp) for common utility libraries.
+* [glog](https://github.com/google/glog) for logging.
+* [Google Benchmark](https://github.com/google/benchmark) for benchmarking.
+
+
+
+
+
 
 
