@@ -16,7 +16,6 @@ int main(int argc, char *argv[])
     (void)argc;
     // Initialize Google’s logging library.
     google::InitGoogleLogging(argv[0]);
-    google::SetStderrLogging(google::INFO);
 
     // Cast Error_Handler to logging_fail_func_t to match the function signature
     google::InstallFailureFunction(reinterpret_cast<google::logging_fail_func_t>(Error_Handler));
