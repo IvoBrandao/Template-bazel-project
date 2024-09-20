@@ -19,8 +19,12 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v3
 
-    - name: Set up Bazelisk (always latest Bazel)
-      uses: bazelbuild/setup-bazelisk@v1.1
+    - name: Set up Bazel (with caching)
+      uses: bazel-contrib/setup-bazel@0.8.5
+      with:
+        bazelisk-cache: true               # Cache Bazelisk downloads
+        disk-cache: ${{ github.workflow }}  # Store build cache per workflow
+        repository-cache: true             # Share repository cache between workflows
 
     - name: Build with Bazel
       run: bazel build //app:main
