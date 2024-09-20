@@ -1,0 +1,27 @@
+name: Build Bazel Project
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Set up Bazelisk (always latest Bazel)
+      uses: bazelbuild/setup-bazelisk@v1.1
+
+    - name: Build with Bazel
+      run: bazel build //app:main
+      
