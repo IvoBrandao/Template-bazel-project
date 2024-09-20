@@ -4,7 +4,7 @@
 common --enable_bzlmod
 
 # Set C++ build flags
-build --cxxopt=-std=c++23
+build --cxxopt=-std=c++17
 build --copt=-Wall
 build --copt=-Wextra
 build --copt=-Werror
