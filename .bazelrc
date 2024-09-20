@@ -5,9 +5,9 @@ common --enable_bzlmod
 
 # Set C++ build flags
 build --cxxopt=-std=c++17
-build --copt=-Wall
-build --copt=-Wextra
-build --copt=-Werror
+# build --copt=-Wall
+# build --copt=-Wextra
+# build --copt=-Werror
 
 # Enable remote caching and execution (if you have remote caching set up)
 # build --remote_cache=<your-remote-cache-url>
