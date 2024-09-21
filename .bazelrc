@@ -14,8 +14,7 @@ build --cxxopt=-std=c++2b
 # build --remote_executor=<your-remote-executor-url>
 
 # Enable sandboxing and stricter dependency checking
-build --experimental_strict_action_env
-build --incompatible_strict_action_env
+build --sandbox_debug  # Replaced deprecated strict flags with sandboxing options
 
 # Enable colored output for better visibility
 common --color=yes
@@ -24,14 +23,15 @@ common --curses=yes
 # Use verbose failure logs in case of errors
 build --verbose_failures
 
-# Build for x86-64 (default)
-# build:x86_64 --cpu=k8
-# 3build:x86_64 --platforms=//:x86_64_platform
-# build:x86_64 --cxxopt=-march=x86-64
+# Platform-specific build commands
+build:linux --platforms=//:ubuntu_platform --crosstool_top=//toolchain:clang_suite
 
-# Build for ARM64
-# build:arm64 --cpu=arm64
-# build:arm64 --platforms=//:arm64_platform
-# build:arm64 --cxxopt=-march=armv8-a
+build:windows --platforms=//:windows_platform --crosstool_top=//toolchain:clang_suite
 
+build:macos --platforms=//:macos_platform ---crosstool_top=//toolchain:clang_suite
 
+# Enable experimental features in Bazel 7.x
+build --experimental_enable_bzlmod
+
+# Add stricter build settings for more reproducible builds
+build --experimental_guard_against_concurrent_changes

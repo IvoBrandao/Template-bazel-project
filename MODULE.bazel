@@ -9,8 +9,8 @@ module(
     version = "0.1.0",  # replace with your version
 )
 
+# Updated dependency versions
 bazel_dep(name = "bazel_skylib", version = "1.7.1")
-
 bazel_dep(name = "rules_platform", version = "0.1.0")
 bazel_dep(name = "rules_cc", version = "0.0.10")
 bazel_dep(name = "rules_testing", version = "0.6.0")
@@ -18,7 +18,17 @@ bazel_dep(name = "googletest", version = "1.14.0.bcr.1", repo_name = "com_google
 bazel_dep(name = "grpc", version = "1.48.1.bcr.1", repo_name = "com_github_grpc_grpc")
 bazel_dep(name = "protobuf", version = "21.7", repo_name = "com_google_protobuf")
 bazel_dep(name = "abseil-cpp", version = "20230802.0")
-bazel_dep(name = "glog", version = "0.7.1", repo_name="com_github_google_glog")
+bazel_dep(name = "glog", version = "0.7.1", repo_name = "com_github_google_glog")
 bazel_dep(name = "google_benchmark", version = "1.8.5")
 bazel_dep(name = "gflags", version = "2.2.2")
+
+
+bazel_dep(name = "platforms", version = "0.0.10")
+
+# Register execution platforms (can also be in a BUILD file)
+register_execution_platforms(
+    "//platforms:ubuntu_platform",
+    "//platforms:windows_platform",
+    "//platforms:macos_platform"
+)
 
