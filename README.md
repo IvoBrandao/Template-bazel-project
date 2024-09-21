@@ -70,6 +70,10 @@ bazel run //app:main
 
 ```bash
 bazel test //app:main
+# or for a specific platform:
+bazel run  //app:main --platforms=//platforms:windows_platform
+bazel run  //app:main --platforms=//platforms:macos_platform
+bazel run  //app:main --platforms=//platforms:ubuntu_platform
 ```
 
 ### Step 5: Test individual libraries
